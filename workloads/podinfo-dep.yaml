@@ -63,3 +63,26 @@ spec:
           requests:
             cpu: 10m
             memory: 64Mi
+      - name: fluxcloud
+        image: justinbarrick/fluxcloud:v0.3.9
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3032
+        env:
+        - name: EXPORTER_TYPE
+          value: webhook
+        - name: WEBOOK_URL
+          value: "https://eny4rt07oymo.x.pipedream.net/"
+        # Or configure multiple channels
+        # (comma separated <channel>=<namespace>) string:
+        #  value: "#kubernetes=*,#team=team"
+        # Optional: legacy Slack API token
+        # - name: SLACK_TOKEN
+        #   valueFrom:
+        #     secretKeyRef:
+        #       key: token
+        #       name: slack-token
+        - name: GITHUB_URL
+          value: "https://github.com/justinbarrick/fluxcloud/"
+        - name: LISTEN_ADDRESS
+          value: ":3032"
