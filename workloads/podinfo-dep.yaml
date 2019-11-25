@@ -71,7 +71,7 @@ spec:
         env:
         - name: EXPORTER_TYPE
           value: webhook
-        - name: WEBOOK_URL
+        - name: WEBHOOK_URL
           value: "https://eny4rt07oymo.x.pipedream.net/"
         # Or configure multiple channels
         # (comma separated <channel>=<namespace>) string:
