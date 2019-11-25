@@ -47,7 +47,7 @@ spec:
         - --random-error=false
         env:
         - name: PODINFO_UI_MESSAGE
-          value: "tT3esting?!"
+          value: "tT4esting?!"
         livenessProbe:
           httpGet:
             path: /healthz
